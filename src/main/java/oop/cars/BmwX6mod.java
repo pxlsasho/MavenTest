@@ -15,6 +15,5 @@ public class BmwX6mod extends BmwX6 {
     @Override
     public void lightsShine( ) {
         System.out.println("BmwX6mod: Xenon Headlights.");
-        //super.lightsShine();
     }
 }
