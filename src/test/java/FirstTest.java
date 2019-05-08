@@ -15,6 +15,5 @@ public class FirstTest {
         driver.get("https://demo.opencart.com");
         driver.close();
 
-
     }
 }
