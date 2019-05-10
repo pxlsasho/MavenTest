@@ -1,4 +1,4 @@
-package pages.nsosnovshchenko;
+package nsosnovshchenko;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
