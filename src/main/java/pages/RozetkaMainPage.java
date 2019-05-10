@@ -29,6 +29,7 @@ public class RozetkaMainPage {
     }
 
     //MAIN METHODS
+    //@Step
     public void open()
     {
         driver.get(BASE_URL);
