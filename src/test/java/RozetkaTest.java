@@ -1,8 +1,9 @@
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import pages.MainPage;
+import pages.RozetkaMainPage;
 
 public class RozetkaTest {
 
@@ -11,13 +12,18 @@ public class RozetkaTest {
     {
         //Init chrome driver
         System.setProperty("webdriver.chrome.driver" ,  "/Users/osynyava/chromedriver/chromedriver");
-        WebDriver chromeDriver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
 
-        //Test Body
-        MainPage mainPage = PageFactory.initElements(chromeDriver, MainPage.class);
-        mainPage.open();
-        mainPage.steUALocalization();
+        driver.get("https://rozetka.com.ua");
+        driver.findElement(By.linkText("UA")).click();
+        driver.findElement(By.linkText("увійдіть в особистий кабінет")).click();
+        driver.findElement(By.linkText("Зареєструватися")).click();
 
+        RozetkaMainPage rMainPage = PageFactory.initElements(driver, RozetkaMainPage.class);
+        rMainPage.open();
+        rMainPage.clickOnUALocalization();
+        rMainPage.clickOnPersonalCabinet();
+        rMainPage.clickOnRegistration();
     }
 
 

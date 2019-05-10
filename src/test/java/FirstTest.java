@@ -1,4 +1,4 @@
-import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
+
 import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.By;
@@ -14,8 +14,8 @@ public class FirstTest {
     {
         System.setProperty("webdriver.chrome.driver" ,  "/Users/osynyava/chromedriver/chromedriver");
         WebDriver driver = new ChromeDriver();
+        driver.get("https://rozetka.com.ua");
 
-        driver.get("https://rozetka.com.ua/ua/");
         driver.findElement(By.xpath("(//a[@href='/a/'])")).click();
         driver.findElement(By.xpath("//a[class='header-topline__user-link']")).click();
         driver.findElement(By.linkText("Зареєструватися")).click();
