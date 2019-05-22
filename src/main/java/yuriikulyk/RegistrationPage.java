@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class RegistrationPage {
     private static final String Base_URL = "https://demo.opencart.com/";
     private static final String MY_ACCOUNT_LINK_TEXT = "My Account";
-    private static final String REGISTRATION_LINK_TEXT = "Register";
+    private static final String REGISTRATION_LINK_TEXT = "/html/body/nav/div/div[2]/ul/li[2]/ul/li[1]/a";
     private static final String FIRST_NAME_NAME = "firstname";
     private static final String LAST_NAME_NAME = "lastname";
     private static final String EMAIL_NAME = "email";
@@ -21,7 +21,7 @@ public class RegistrationPage {
 
     @FindBy(linkText = MY_ACCOUNT_LINK_TEXT)
     private WebElement myAccountLink;
-    @FindBy(linkText = REGISTRATION_LINK_TEXT)
+    @FindBy(xpath = REGISTRATION_LINK_TEXT)
     private WebElement registrationLink;
     @FindBy(name = FIRST_NAME_NAME)
     private WebElement firstNameField;
