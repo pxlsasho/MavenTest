@@ -9,7 +9,7 @@ public class TestNG {
     @Test
     public void RegistrationNewUser()
     {
-        System.setProperty("webdriver.chrome.driver" ,  "D://IntelliJ IDEA Community Edition 2019.1/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver\" ,  \"/Users/osynyava/chromedriver/chromedriver");
         WebDriver driver = new ChromeDriver();
 
         RegistrationPage registrationPage = PageFactory.initElements(driver, RegistrationPage.class);
@@ -20,7 +20,7 @@ public class TestNG {
     @Test
     public void LoginOldUser()
     {
-        System.setProperty("webdriver.chrome.driver" ,  "D://IntelliJ IDEA Community Edition 2019.1/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver\" ,  \"/Users/osynyava/chromedriver/chromedriver");
         WebDriver driver = new ChromeDriver();
 
         LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -31,7 +31,7 @@ public class TestNG {
     @Test
     public void SearchAndAddToCart()
     {
-        System.setProperty("webdriver.chrome.driver" ,  "D://IntelliJ IDEA Community Edition 2019.1/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver\" ,  \"/Users/osynyava/chromedriver/chromedriver");
         WebDriver driver = new ChromeDriver();
 
         CartPage cartPage = PageFactory.initElements(driver, CartPage.class);
