@@ -49,6 +49,7 @@ public class RegistrationPage {
     public void goToRegistrationPage() {
         driver.get(Base_URL);
         myAccountLink.click();
+        Thread.sleep(1000);
         registrationLink.click();
     }
     public void registration()
