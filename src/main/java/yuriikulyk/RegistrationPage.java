@@ -49,7 +49,7 @@ public class RegistrationPage {
     public void goToRegistrationPage() throws Exception {
         driver.get(Base_URL);
         myAccountLink.click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         registrationLink.click();
     }
     public void registration()
