@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.OpenCartProperties;
 
-public class TestNG {
+public class TestNG{
 
     WebDriver driver;
 
@@ -19,7 +19,7 @@ public class TestNG {
         driver = new ChromeDriver();
     }
     @Test
-    public void RegistrationNewUser()
+    public void RegistrationNewUser() throws Exception
     {
         RegistrationPage registrationPage = PageFactory.initElements(driver, RegistrationPage.class);
         registrationPage.goToRegistrationPage();
