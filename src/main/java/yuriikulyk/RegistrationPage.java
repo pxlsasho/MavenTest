@@ -46,10 +46,10 @@ public class RegistrationPage {
         this.driver = driver;
     }
 
-    public void goToRegistrationPage() {
+    public void goToRegistrationPage() throws Exception {
         driver.get(Base_URL);
         myAccountLink.click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         registrationLink.click();
     }
     public void registration()
