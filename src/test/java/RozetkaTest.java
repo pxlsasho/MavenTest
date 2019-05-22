@@ -8,7 +8,6 @@ import pages.RozetkaMainPage;
 public class RozetkaTest {
 
     @Test
-
     public void testRozetka()
     {
         //Init chrome driver

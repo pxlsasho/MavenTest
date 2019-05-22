@@ -34,5 +34,8 @@ public class FirstTest {
         WebElement slider = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@class, 'cta')][2]")));
         slider.click();
 
+
+
+
     }
 }
