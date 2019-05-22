@@ -8,13 +8,16 @@ import pages.dchalyi.OpenCartCartPage;
 import pages.dchalyi.OpenCartLoginPage;
 import pages.dchalyi.OpenCartMainPage;
 import pages.dchalyi.OpenCartRegistrationPage;
+import utils.OpenCartProperties;
 
 public class OpenCartTest {
 
     @Test
     public void testOpenCart() throws Exception {
         //Init chrome driver
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\1\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+        OpenCartProperties props = new OpenCartProperties();
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\1\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver" ,  props.getChromedriver());
         WebDriver driver = new ChromeDriver();
 
         OpenCartRegistrationPage registrationPage = PageFactory.initElements(driver, OpenCartRegistrationPage.class);
