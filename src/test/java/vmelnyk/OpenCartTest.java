@@ -10,7 +10,8 @@ public class OpenCartTest {
     @Test
     public void TestOpenCart()
     {
-        System.setProperty("webdriver.chrome.driver" , "C:/chromedriver/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver" , "C:/chromedriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver" ,  "/Users/osynyava/chromedriver/chromedriver");
         WebDriver chromeDriver = new ChromeDriver();
 
         MainPage mainPage = PageFactory.initElements(chromeDriver, MainPage.class);
