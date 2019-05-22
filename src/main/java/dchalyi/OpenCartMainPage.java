@@ -7,17 +7,23 @@ import org.openqa.selenium.support.FindBy;
 
 public class OpenCartMainPage {
     private static final String BASE_URL = "https://demo.opencart.com/";
+    private static final String ACCOUNT_LINK = "My Account";
+    private static final String LOGIN_LINK = "Login";
+    private static final String REGISTER_LINK = "Register";
+    private static final String LOGOUT_LINK = "Logout";
+
     private WebDriver driver;
 
-    @FindBy(xpath = "//*[@name='email']")
-    private WebElement emailField;
-
-    @FindBy(xpath = "//*[@name='password']")
-    private WebElement passwordField;
-
-    @FindBy(xpath = "//*[@value='Login']")
-    private WebElement clickLogin;
-
+    @FindBy(linkText = ACCOUNT_LINK)
+    private WebElement myAccountField;
+    @FindBy(linkText = LOGIN_LINK)
+    private WebElement loginField;
+    @FindBy(linkText = REGISTER_LINK)
+    private WebElement registerField;
+    @FindBy(linkText = LOGOUT_LINK)
+    private WebElement logoutField;
+    @FindBy(linkText = "Continue")
+    private WebElement start;
     public OpenCartMainPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -27,32 +33,24 @@ public class OpenCartMainPage {
     }
 
     public void findMyAccount() {
-        driver.findElement(By.linkText("My Account")).click();
+        myAccountField.click();
     }
 
     public void findLogin() {
-        driver.findElement(By.linkText("Login")).click();
+        loginField.click();
     }
 
-    public void enterEmail(String email) {
-        driver.findElement(By.xpath("//*[@name='email']")).click();
-        driver.findElement(By.xpath("//*[@name='email']")).clear();
-        driver.findElement(By.xpath("//*[@name='email']")).sendKeys(email);
+    public void findRegister() {
+        registerField.click();
     }
 
-    public void enterPassword(String password) {
-        driver.findElement(By.xpath("//*[@name='password']")).click();
-        driver.findElement(By.xpath("//*[@name='password']")).clear();
-        driver.findElement(By.xpath("//*[@name='password']")).sendKeys(password);
+    public void logout(){
+        findMyAccount();
+        logoutField.click();
     }
 
-    public void clickLogin(){
-        driver.findElement(By.xpath("//*[@value='Login']")).click();
+    public void clickContinueButton(){
+        start.click();
     }
 
-    public void loginAS(String userEmail, String userPassword) {
-        enterEmail(userEmail);
-        enterPassword(userPassword);
-        clickLogin();
-    }
 }
