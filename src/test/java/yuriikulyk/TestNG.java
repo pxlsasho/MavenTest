@@ -18,7 +18,7 @@ public class TestNG{
         System.setProperty("webdriver.chrome.driver" ,  props.getChromedriver());
         driver = new ChromeDriver();
     }
-    @Test
+    //@Test
     public void RegistrationNewUser() throws Exception
     {
         RegistrationPage registrationPage = PageFactory.initElements(driver, RegistrationPage.class);
