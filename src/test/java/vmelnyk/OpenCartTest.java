@@ -4,22 +4,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import utils.OpenCartProperties;
+
 
 public class OpenCartTest {
 
     @Test
-    public void TestOpenCart() throws Exception
+    public void TestOpenCart()
     {
-        //System.setProperty("webdriver.chrome.driver" , "C:/chromedriver/chromedriver.exe");
-        //System.setProperty("webdriver.chrome.driver" ,  "/Users/osynyava/chromedriver/chromedriver");
-        OpenCartProperties props = new OpenCartProperties();
-        System.setProperty("webdriver.chrome.driver" ,  props.getChromedriver());
+        System.setProperty("webdriver.chrome.driver" , "C:/chromedriver/chromedriver.exe");
         WebDriver chromeDriver = new ChromeDriver();
 
         MainPage mainPage = PageFactory.initElements(chromeDriver, MainPage.class);
         mainPage.open();
-        mainPage.AccountClick();
+        mainPage.MyAccount_Click();
+        mainPage.Register_CLick();
+        mainPage.FirstName_Click();
+        mainPage.FirstName_Set();
+        mainPage.LastName_Set();
+        mainPage.Email_Set();
+        mainPage.Telephone_Set();
+        mainPage.Password_Set();
+        mainPage.Confirm_Password();
+        mainPage.Agree_Click();
+        mainPage.Continue_Click();
 
     }
 }
