@@ -2,13 +2,17 @@ package nsosnovshchenko;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import utils.OpenCartProperties;
 
 import java.io.IOException;
+
+import static org.testng.Assert.assertEquals;
 
 
 public class OpenCartTest {
@@ -30,9 +34,13 @@ public class OpenCartTest {
         new RegisterUser(ChromeDriver);
 
         RegisterUser.open();
+        Assert.assertEquals(ChromeDriver.findElement(By.xpath("/html/body/header/div/div/div[1]/div/h1/a")).getText(),"Your Store");
         RegisterUser.goToMyAccount();
+        Assert.assertEquals(ChromeDriver.findElement(By.linkText("Register")).getText(),"Register");
         RegisterUser.goToRegistrationPage();
+        Assert.assertEquals(ChromeDriver.findElement(By.className("agree")).getText(),"Privacy Policy");
         RegisterUser.registerNewUser();
+        ChromeDriver.close();
     }
 
     @Test
@@ -45,9 +53,14 @@ public class OpenCartTest {
         new OpenCartMainPage(ChromeDriver);
 
         OpenCartMainPage.open();
+        Assert.assertEquals(ChromeDriver.findElement(By.xpath("/html/body/header/div/div/div[1]/div/h1/a")).getText(),"Your Store");
         OpenCartMainPage.goToMyAccount();
+        Assert.assertEquals(ChromeDriver.findElement(By.linkText("Register")).getText(),"Register");
         OpenCartMainPage.goToMyLoginPage();
+        Assert.assertEquals(ChromeDriver.findElement(By.className("btn-primary")).getText(),"Continue");
         OpenCartMainPage.userLogin();
+        Assert.assertEquals(ChromeDriver.findElement(By.className("list-unstyled")).getText(),"");
+        ChromeDriver.close();
     }
 
     @Test
@@ -59,9 +72,9 @@ public class OpenCartTest {
         new CartPage(ChromeDriver);
 
         CartPage.open();
-        //CartPage.searchAndAddToCart();
-
+        Assert.assertEquals(ChromeDriver.findElement(By.xpath("/html/body/header/div/div/div[1]/div/h1/a")).getText(),"Your Store");
         CartPage.searchAndAddToCartBetterTry();
+        ChromeDriver.close();
     }
 
 }
