@@ -46,34 +46,6 @@ public class CartPage {
         driver.get(BASE_URL);
     }
 
-    public void searchAndAddToCart(){
-        searchButtonLink.click();
-        searchCriteriaField.clear();
-        searchCriteriaField.sendKeys("Apple Cinema 30");
-        chooseCategoryLink.click();
-        //select element from drop-down list
-/*        WebElement searchMonitors =driver.findElement(By.name("category_id"));
-        Select sel = new Select(searchMonitors);
-        sel.selectByIndex(28);*/
-        // current value doesn't work to choose "Monitors"
-        thisSearchLink.click();
-        chooseMonitor.click();
-        largeRadioOption.click();//choose first option
-        checkbox1Link.click();//choose first option
-
-        WebElement selectColor =driver.findElement(By.name("option[217]"));
-        Select sell = new Select(selectColor);
-        sell.selectByIndex(3); //green color
-        //wanted to upload txt file
-        //but this function doesn't work correctly on the site
-        enterTextLink.sendKeys("blablablablablaba");
-        uploadFileLink.sendKeys("G:\\\\test.txt");
-
-        addToCart.click();
-        driver.close();
-
-    }
-
     public void searchAndAddToCartBetterTry(){
         searchButtonLink.click();
         searchCriteriaField.clear();
