@@ -31,8 +31,8 @@ public class FirstTest {
 
         //Explicit Wait
         WebDriverWait explicitWait = new WebDriverWait(driver, 10);
-        WebElement slider = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@class, 'cta')][2]")));
-        slider.click();
+        //WebElement slider = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@class, 'cta')][2]")));
+       // slider.click();
 
 
 
