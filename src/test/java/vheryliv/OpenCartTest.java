@@ -4,15 +4,26 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeTest;
 import utils.OpenCartProperties;
 
 public class OpenCartTest {
-    @Test
-    public void opencarttest() throws Exception{
-        //chromedriver
-        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\vladg_000\\chromedriver\\chromedriver.exe");
+
+    /*WebDriver chromedriver;
+
+    @BeforeTest
+    public void setup() throws Exception {
         OpenCartProperties props = new OpenCartProperties();
-        System.setProperty("webdriver.chrome.driver" ,  props.getChromedriver());
+        System.setProperty("webdriver.chrome.driver", props.getChromedriver());
+        chromedriver = new ChromeDriver();
+    }*/
+
+    @Test
+    public void opencarttest() {
+        //chromedriver
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\vladg_000\\chromedriver\\chromedriver.exe");
+        //OpenCartProperties props = new OpenCartProperties();
+        //System.setProperty("webdriver.chrome.driver" ,  props.getChromedriver());
         WebDriver chromedriver = new ChromeDriver();
 
         //test
@@ -20,5 +31,14 @@ public class OpenCartTest {
         mainPage.open();
         mainPage.click();
 
+    }
+
+    @Test
+    public void DoLogIn(){
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\vladg_000\\chromedriver\\chromedriver.exe");
+        WebDriver chromedriver = new ChromeDriver();
+        LogIn dologin = PageFactory.initElements(chromedriver,LogIn.class);
+        dologin.gotoLogInPage();
+        dologin.dologin();
     }
 }
