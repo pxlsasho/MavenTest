@@ -38,13 +38,12 @@ public class OpenCartTest {
 
         //open source link
         RegisterUser.open();
-        Assert.assertEquals(ChromeDriver.findElement(By.xpath("/html/body/header/div/div/div[1]/div/h1/a")).getText(),"Your Store");
         RegisterUser.goToMyAccount();
-        Assert.assertEquals(ChromeDriver.findElement(By.linkText("Register")).getText(),"Register");
         RegisterUser.goToRegistrationPage();
-        Assert.assertEquals(ChromeDriver.findElement(By.className("agree")).getText(),"Privacy Policy");
         //calling new user registration method
         RegisterUser.registerNewUser();
+        assertEquals(ChromeDriver.findElement(By.className("btn-primary")).getText(),
+                "Continue");
         //closing web page
         ChromeDriver.close();
     }
@@ -61,16 +60,14 @@ public class OpenCartTest {
 
         //opening source link
         OpenCartMainPage.open();
-        Assert.assertEquals(ChromeDriver.findElement(By.xpath("/html/body/header/div/div/div[1]/div/h1/a")).getText(),"Your Store");
         OpenCartMainPage.goToMyAccount();
-        Assert.assertEquals(ChromeDriver.findElement(By.linkText("Register")).getText(),"Register");
         //going to login page
         OpenCartMainPage.goToMyLoginPage();
-        Assert.assertEquals(ChromeDriver.findElement(By.className("btn-primary")).getText(),"Continue");
         //logging
         OpenCartMainPage.userLogin();
-        Assert.assertEquals(ChromeDriver.findElement(By.className("list-unstyled")).getText(),"");
-        //close activity
+        assertEquals(ChromeDriver.findElement(By.className("list-unstyled"))
+                .getText(),"");
+        //closing activity
         ChromeDriver.close();
     }
 
@@ -88,6 +85,9 @@ public class OpenCartTest {
         Assert.assertEquals(ChromeDriver.findElement(By.xpath("/html/body/header/div/div/div[1]/div/h1/a")).getText(),"Your Store");
         //searching and picking an object to add to cart
         CartPage.searchAndAddToCartBetterTry();
+        //doesn't work: Unable to locate element
+        //assertEquals(ChromeDriver.findElement(By.partialLinkText("Success: You have added")).getClass(),"alert-dismissible");
+
         //closing the page
         ChromeDriver.close();
     }

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Random;
+
 public class RegisterUser {
 
     //variables
@@ -43,34 +45,50 @@ public class RegisterUser {
     private WebElement privacyPolicyCheck;
     @FindBy(xpath = "/html/body/div[2]/div/div/form/div/div/input[2]")
     private WebElement continueButton;
+
     //setter
     public RegisterUser(WebDriver driver)
     {
         this.driver = driver;
     }
+
     //launch base url
     public void open()
     {
         driver.get(BASE_URL);
     }
+
     //go to account
     public void goToMyAccount()
     {
         myAccountLink.click();
     }
+
     //go to registration page
     public void goToRegistrationPage()
     {
         registrationLink.click();
     }
+
+    //random integer creation
+    public int generateInt3(){
+        Random rand = new Random();
+        int number = rand.nextInt(999);
+        return number;
+    }
+
     //method that registers new user
     public void registerNewUser(){
+
+        String firstName = "FirstName"+ generateInt3();
+        String secondName = "SecondName"+ generateInt3();
+
         firstNameField.clear();
-        firstNameField.sendKeys("Test12345");
+        firstNameField.sendKeys(firstName);
         lastNameField.clear();
-        lastNameField.sendKeys("Second12345");
+        lastNameField.sendKeys(secondName);
         emailField.clear();
-        emailField.sendKeys("test@ukr.net");
+        emailField.sendKeys("test" + generateInt3() + "@gmail.com");
         telephoneField.clear();
         telephoneField.sendKeys("+380633456789");
         passwordField.clear();
