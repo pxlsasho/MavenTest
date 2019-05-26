@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class RegisterUser {
 
+    //variables
     private static final String BASE_URL = "https://demo.opencart.com/";
     private static final String MY_ACCOUNT_LINK_TEST = "My Account";
     private static final String REGISTRATION_LINK = "Register";
@@ -17,9 +18,9 @@ public class RegisterUser {
     private static final String CONFIRM_PASS_LINK = "confirm";
     private static final String MAIL_SUBSCRIPTION_LINK = "newsletter";
     private static final String PRIVACY_POLICY_LINK = "agree";
-
+    //driver var
     private WebDriver driver;
-
+    //web elements
     @FindBy(linkText = MY_ACCOUNT_LINK_TEST)
     private WebElement myAccountLink;
     @FindBy(linkText = REGISTRATION_LINK)
@@ -42,24 +43,27 @@ public class RegisterUser {
     private WebElement privacyPolicyCheck;
     @FindBy(xpath = "/html/body/div[2]/div/div/form/div/div/input[2]")
     private WebElement continueButton;
-
+    //setter
     public RegisterUser(WebDriver driver)
     {
         this.driver = driver;
     }
-
+    //launch base url
     public void open()
     {
         driver.get(BASE_URL);
     }
+    //go to account
     public void goToMyAccount()
     {
         myAccountLink.click();
     }
+    //go to registration page
     public void goToRegistrationPage()
     {
         registrationLink.click();
     }
+    //method that registers new user
     public void registerNewUser(){
         firstNameField.clear();
         firstNameField.sendKeys("Test12345");

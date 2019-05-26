@@ -11,6 +11,7 @@ public class CartPage {
 
     private WebDriver driver;
 
+    //instances of page web elements
     @FindBy(xpath = "/html/body/header/div/div/div[2]/div/span/button/i")
     private WebElement searchButtonLink;
     @FindBy(id = "input-search")
@@ -36,16 +37,17 @@ public class CartPage {
     @FindBy(xpath = "/html/body/div[2]/div/div/div[3]/div[1]/div/div[2]/div[1]/h4/a")
     private WebElement chooseIMac;
 
-
+    //setter
     public CartPage(WebDriver driver)
     {
         this.driver = driver;
     }
+    //method for opening the base url
     public void open()
     {
         driver.get(BASE_URL);
     }
-
+    //method for searching and adding to cart
     public void searchAndAddToCartBetterTry(){
         searchButtonLink.click();
         searchCriteriaField.clear();

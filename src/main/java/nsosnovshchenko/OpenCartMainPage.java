@@ -5,14 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class OpenCartMainPage {
-    //написать метод который будет переходить на страничку логин в опен карт
 
+    //variables
     private static final String BASE_URL = "https://demo.opencart.com/";
     private static final String MY_ACCOUNT_LINK_TEST = "My Account";
     private static final String LOGIN_LINK_TEST = "Login";
 
     private WebDriver driver;
 
+    //web element instances
     @FindBy(linkText = MY_ACCOUNT_LINK_TEST)
     private WebElement myAccountLink;
     @FindBy(linkText = LOGIN_LINK_TEST)
@@ -24,6 +25,7 @@ public class OpenCartMainPage {
     @FindBy(xpath = "/html/body/div[2]/div/div/div/div[2]/div/form/input")
     private WebElement loginButton;
 
+    //logging method
     public OpenCartMainPage(WebDriver driver)
     {
         this.driver = driver;
