@@ -5,9 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class OpenCartMainPage {
-    private static final String BASE_URL = "https://demo.opencart.com";
+    private static final String BASE_URL = "https://demo.opencart.com/";
     private static final String My_Account_LINK_TEXT = "My Account";
+
     private WebDriver driver;
+
     @FindBy(linkText = "My Account")
     private WebElement accountLink;
 
